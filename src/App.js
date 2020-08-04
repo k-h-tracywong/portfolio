@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 import Footer from './components/Footer';
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import HomePage from "./pages/HomePage";
 
 class App extends Component {
   constructor(props) {
@@ -35,6 +38,15 @@ class App extends Component {
                        </Nav>
                    </Navbar.Collapse>
                </Navbar>
+               <Route exact path='/'>
+                   <HomePage />
+               </Route>
+               <Route path='/about'>
+                   <AboutPage />
+               </Route>
+               <Route path='/contact'>
+                   <ContactPage />
+               </Route>
                <Footer />
            </Container>
        </Router>
